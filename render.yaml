@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: social-media-backend
+    runtime: docker
+    plan: free
+    dockerContext: ./server
+    dockerfilePath: ./server/Dockerfile.prod
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRY
+        value: 7d
+      - key: CORS_ORIGIN
+        sync: false
+      - key: RATE_LIMIT_WINDOW_MS
+        value: "900000"
+      - key: RATE_LIMIT_MAX
+        value: "120"
+
+  - type: web
+    name: social-media-frontend
+    runtime: docker
+    plan: free
+    dockerContext: ./client
+    dockerfilePath: ./client/Dockerfile.prod
+    autoDeployTrigger: commit
+    envVars:
+      - key: VITE_API_URL
+        sync: false
+      - key: VITE_APP_ENV
+        value: production
+      - key: VITE_CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: VITE_CLOUDINARY_UPLOAD_PRESET
+        sync: false
