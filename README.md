@@ -35,3 +35,10 @@ cd client && npm run build
 Frontend: https://social-media-frontend-8k8k.onrender.com
 
 Backend: https://social-media-backend-6a1n.onrender.com
+
+### Demo Login Credentials
+
+| Email | Password |
+| --- | --- |
+| sam@gmail.com | sandeep |
+| rock@gmail.com | sandeep |
