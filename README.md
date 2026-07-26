@@ -20,10 +20,6 @@ Frontend: `http://localhost:5173`
 
 Backend health: `http://localhost:5000/api/health`
 
-Detailed Docker guides:
-
-- [DOCKER_LOCAL_SETUP.md](./DOCKER_LOCAL_SETUP.md)
-- [DOCKER_PRODUCTION_SETUP.md](./DOCKER_PRODUCTION_SETUP.md)
 
 Manual setup is still supported:
 
