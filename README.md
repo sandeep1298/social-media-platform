@@ -8,35 +8,6 @@ The frontend is organized around reusable `components`, route-level `pages`, `la
 
 The backend now uses `controllers`, `services`, `routes`, `middleware`, `models`, `validators`, `utils`, and `config` folders. MongoDB remains the source of truth; Redis is used only for feed/profile/search caching and distributed rate limiting when `REDIS_URL` is configured.
 
-## Local Development
-
-Run the full stack with Docker:
-
-```bash
-docker compose up --build
-```
-
-Frontend: `http://localhost:5173`
-
-Backend health: `http://localhost:5000/api/health`
-
-
-Manual setup is still supported:
-
-```bash
-cd server
-cp .env.example .env
-npm install
-npm run dev
-```
-
-```bash
-cd client
-cp .env.example .env
-npm install
-npm run dev
-```
-
 ## Key Features
 
 - Chakra UI responsive app shell with collapsible sidebar.
@@ -49,7 +20,7 @@ npm run dev
 - Search across post title/body and usernames with sorting.
 - Framer Motion page/card motion and GSAP sidebar animation.
 - Helmet, CORS, validation, JWT auth, centralized errors, and rate limiting.
-- Local Docker Compose and separate production Dockerfiles.
+- Production Docker deployment with separate frontend and backend services.
 
 ## Verification
 
@@ -59,4 +30,8 @@ cd client && npm run lint
 cd client && npm run build
 ```
 
-Production deployment details are in [PRODUCTION_DEPLOYMENT.md](./PRODUCTION_DEPLOYMENT.md).
+## Live Demo
+
+Frontend: https://social-media-frontend-8k8k.onrender.com
+
+Backend: https://social-media-backend-6a1n.onrender.com
